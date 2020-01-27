@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: hello-service
+
+logging:
+  level:
+    com.buddhima.testing.demo.client: DEBUG
+
+feign:
+  client:
+    config:
+      default:
+        errorDecoder: com.buddhima.testing.demo.client.DrmClientErrorDecoder
+        loggerLevel: BASIC
+        retryer: com.buddhima.testing.demo.client.DrmClientRetryer
